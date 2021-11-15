@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Github Browser</string>
+
+    <string name="date">yyyy.MM.dd</string>
+    <string name="date_time">yyyy.MM.dd hh:mm:ss</string>
+    <string name="notice">알림</string>
+
+    <string name="btn_cancel">취소</string>
+    <string name="btn_confirm">확인</string>
+    <string name="btn_all_delete">전체 삭제</string>
+
+    <string name="search_user_edit_hint">검색어를 입력해주세요.</string>
+    <string name="search_user_empty">검색 결과가 없습니다.</string>
+
+    <string name="search_user_score">score: </string>
+    <string name="search_user_star">star: </string>
+    <string name="search_user_follower">follower: </string>
+    <string name="search_user_following">following  </string>
+
+
+    <string name="search_user_recent_history">검색 기록</string>
+    <string name="search_user_recent_empty">최근 검색 기록이 없습니다.</string>
+    <string name="search_user_recent_delete_msg">전체 삭제하시겠습니까?</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="searchRecentItem"
+            type="com.jieun.githubbrowser.model.data.SearchRecentData" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/item_search_recent_tv"
+            style="@style/Font_14_gray_666666"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingVertical="05dp"
+            android:text="@{searchRecentItem.keyword}"
+            tools:text="최근검색어" />
+
+        <ImageView
+            android:id="@+id/item_search_recent_img_delete"
+            android:layout_width="@dimen/dimen_45dp"
+            android:layout_height="@dimen/dimen_45dp"
+            android:paddingVertical="@dimen/dimen_10dp"
+            android:paddingStart="@dimen/dimen_10dp"
+            android:src="@drawable/ic_close_gray" />
+    </LinearLayout>
+
+
+</layout>

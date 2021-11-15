@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="searchUserReposItem"
+            type="com.jieun.githubbrowser.model.data.UserReposData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:clipChildren="true"
+        android:paddingBottom="@dimen/dimen_20dp">
+
+        <TextView
+            android:id="@+id/item_search_user_repos_tv_name"
+            style="@style/Font_16_black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{searchUserReposItem.name}"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/item_search_user_repos_tv_star"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="name" />
+
+
+        <TextView
+            android:id="@+id/item_search_user_repos_tv_star"
+            style="@style/Font_16_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/search_user_star+searchUserReposItem.stargazers_count}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="star: 0" />
+
+        <TextView
+            android:id="@+id/item_search_user_repos_tv_language"
+            style="@style/Font_12_gray_666666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_05dp"
+            android:text="@{searchUserReposItem.language}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_search_user_repos_tv_name"
+            tools:text="language" />
+
+        <TextView
+            android:id="@+id/item_search_user_repos_tv_description"
+            style="@style/Font_14_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_05dp"
+            android:text="@{searchUserReposItem.description}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_search_user_repos_tv_language"
+            tools:text="description" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_01dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:background="@color/gray_f2f2f2"
+            app:layout_constraintTop_toBottomOf="@id/item_search_user_repos_tv_description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

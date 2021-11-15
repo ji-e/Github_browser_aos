@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="searchUserVM"
+            type="com.jieun.githubbrowser.viewmodel.SearchUserViewModel" />
+
+        <variable
+            name="rootView"
+            type="com.jieun.githubbrowser.view.searchuser.SearchUserDetailFragment" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/search_user_detail_img_back"
+            android:layout_width="@dimen/dimen_45dp"
+            android:layout_height="@dimen/dimen_45dp"
+            android:layout_marginStart="06dp"
+            android:padding="@dimen/dimen_10dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:onSafeClick="@{rootView::onClickSearchUserDetailFragment}" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/search_user_detail_swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_00dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_user_detail_img_back">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/search_user_detail_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipChildren="true"
+                android:paddingHorizontal="@dimen/dimen_16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:searchUserDetailListAdapter="@{searchUserVM.liveUserDetail}" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

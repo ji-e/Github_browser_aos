@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Font_12_gray_666666">
+        <item name="android:textSize">@dimen/dimen_12dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+    </style>
+    <style name="Font_14_gray_666666">
+        <item name="android:textSize">@dimen/dimen_14dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+    </style>
+
+    <style name="Font_14_black">
+        <item name="android:textSize">@dimen/dimen_14dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Font_16_black">
+        <item name="android:textSize">@dimen/dimen_16dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Font_18_black">
+        <item name="android:textSize">@dimen/dimen_18dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Font_20_black">
+        <item name="android:textSize">@dimen/dimen_20dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

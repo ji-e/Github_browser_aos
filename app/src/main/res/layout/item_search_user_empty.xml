@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="searchUserEmptyItem"
+            type="com.jieun.githubbrowser.model.data.UserDetailEmptyData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:clipChildren="true"
+        android:paddingVertical="@dimen/dimen_10dp">
+
+        <TextView
+            style="@style/Font_16_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{searchUserEmptyItem.content}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="empty content" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

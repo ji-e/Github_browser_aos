@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="searchUserVM"
+            type="com.jieun.githubbrowser.viewmodel.SearchUserViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_user_edt_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_16dp"
+            android:background="@drawable/shape_rectangle_r5_f_f2f2f2"
+            app:iconifiedByDefault="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryBackground="@null"
+            app:queryHint="@string/search_user_edit_hint" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/search_user_swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_00dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_user_edt_user">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/search_user_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="@dimen/dimen_10dp"
+                    android:visibility="@{searchUserVM.liveSearchUserResult.empty?View.GONE:View.VISIBLE}"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:listAdapter="@{searchUserVM.liveSearchUserResult}"
+                    app:spanCount="2"
+                    tools:listitem="@layout/item_search_user_result" />
+
+                <TextView
+                    android:id="@+id/search_user_tv_empty"
+                    style="@style/Font_16_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/search_user_empty"
+                    android:visibility="@{searchUserVM.liveSearchUserResult.empty?View.VISIBLE:View.GONE}" />
+
+                <FrameLayout
+                    android:id="@+id/search_user_frame_lt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
